@@ -1,0 +1,96 @@
+// Place all the styles related to the bookmarks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.card-category {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+
+.counter {
+  background-color: #F2BE48;
+  box-shadow: 0 2px 5px rgba(black, 0.2);
+  padding: 0.4em;
+  border-radius: 3px;
+  position: absolute;
+  top: 0.7em;
+  right: 0.7em;
+}
+
+
+
+.bookmarks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  min-height: 70vh;
+  align-items: flex-start;
+  margin: 2em auto;
+  gap: 1em;
+}
+
+.card-trip {
+  .card-trip-infos {
+    flex-direction: column;
+    padding: 1em;
+
+    .card-title {
+      width: 100%;
+      margin: 0 auto;
+      align-items: center;
+
+      h2 {
+        font-size: 1.25rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      i {
+        color: #F7DE00;
+        text-shadow: 0 1px 3px rgba(black, 0.2);
+      }
+
+        .rating {
+          margin-left: auto;
+          margin-right: 0.3em;
+        }
+    }
+
+    .overview {
+      margin-top: 1em;
+      max-width: 50ch;
+      align-self: flex-start;
+    }
+
+    .card-trip-stats {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5em;
+
+      .card-trip-comment {
+        font-weight: bold;
+        margin-left: 1em;
+        position: relative;
+      }
+
+      .card-trip-comment::before {
+        content: '“';
+        font-size: 3em;
+        position: absolute;
+        top: -0.3em;
+        left: -0.45em;
+      }
+
+      .btn {
+        color: red;
+      }
+
+      .btn:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
