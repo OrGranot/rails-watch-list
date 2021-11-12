@@ -1,8 +1,43 @@
-<h1>All lists</h1>
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
-<hr>
-<%= link_to "Add a new list", new_list_path %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80);">
+  <div class="container">
+    <h1>Create your own watchlist!</h1>
+    <p>Save, comment and list your favorite movies</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="header-wrapper">
+    <h3>My lists</h3>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+      Create a movie list
+    </button>
+  </div>
+  <div class="card-grid">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list), :action => 'go' do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <h1><%= list.name %></h1>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create a movie list</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render 'form', list: @new_list %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

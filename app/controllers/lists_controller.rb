@@ -3,14 +3,16 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+    @new_list = List.new
   end
 
   def show
+    @new_bookmark = Bookmark.new
   end
 
-  def new
-    @list = List.new
-  end
+  # def new
+  #   @list = List.new
+  # end
 
   def create
     @list = List.new(list_params)
