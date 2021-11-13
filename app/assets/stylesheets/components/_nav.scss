@@ -1,0 +1,28 @@
+nav {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+
+  i {
+    font-size: 2em;
+    opacity: 0.75;
+  }
+
+  p {
+    margin: 0 0.5em;
+
+    span {
+      font-size: 0.8em;
+      color: grey;
+    }
+  }
+
+  .btn {
+    margin-left: auto;
+    opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
