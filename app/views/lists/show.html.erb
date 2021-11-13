@@ -11,7 +11,7 @@
     Add a movie
   </button>
   <%= link_to "Delete list", list_path(@list), method: :delete, class: "btn btn-danger" %>
-  <div class="bookmarks">
+=  <div class="bookmarks">
     <% @list.bookmarks.each do |bookmark| %>
       <div class="card-trip">
         <img src="<%= bookmark.movie.poster_url %>" />
